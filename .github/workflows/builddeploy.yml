@@ -61,7 +61,5 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /home/healthmon/repos/HealthMonitoring
-            git pull
-            docker-compose down
-            docker-compose up -d --build --remove-orphans --force-recreate
+            cd /portfolio
+            
