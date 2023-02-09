@@ -62,4 +62,6 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd portfolio/
+            docker pull ghcr.io/tsipiluka/personalportfolio:release
+            docker run -p 3000:3000 node node server.js
             
