@@ -66,5 +66,5 @@ jobs:
             docker container remove portfolio
             docker image remove portfolio
             docker pull ghcr.io/tsipiluka/personalportfolio:release
-            docker run -p 3030:3030 -d --name portfolio ghcr.io/tsipiluka/personalportfolio:release node server.js
+            docker run -p 3030:3030 -d --name portfolio --label traefik.enable=true --label traefik.http.routers.nginx.rule=Host(`tsipiluka.com`) ghcr.io/tsipiluka/personalportfolio:release node server.js
             
