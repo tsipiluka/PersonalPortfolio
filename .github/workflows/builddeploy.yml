@@ -62,6 +62,9 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd portfolio/
+            docker container stop portainer
+            docker container remove portainer
+            docker image remove portainer
             docker pull ghcr.io/tsipiluka/personalportfolio:release
             docker run -p 3030:3030 -d ghcr.io/tsipiluka/personalportfolio:release node server.js
             
